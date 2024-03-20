@@ -2,10 +2,7 @@ name: deployment of django project
 
 on:
   push:
-    branches:
-      -main
-      -master
-      -origin
+    branches: [main]
 
 jobs:
   testing:
