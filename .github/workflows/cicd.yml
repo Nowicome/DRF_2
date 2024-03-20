@@ -49,5 +49,13 @@ jobs:
       - name: Тестирование
         run: python manage.py test
 
-#      - name: Деплой
-#        uses: ...
+      - name: Деплой
+        uses: appleboy/ssh-action@master
+        env:
+          PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          envs: PASSWORD
+          script: expect ~/DRF_2/deploy.exp
