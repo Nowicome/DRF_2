@@ -8,10 +8,10 @@ jobs:
   testing:
     runs-on: ubuntu-22.04
     permissions:
-      contents: read/write
-      packages: read/write
-      pull-requests: read/write
-      repository-projects: read/write
+      contents: [read, write]
+      packages: [read, write]
+      pull-requests: [read, write]
+      repository-projects: [read, write]
     env:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
       DEBUG: ${{ secrets.DEBUG }}
